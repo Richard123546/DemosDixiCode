@@ -1,0 +1,23 @@
+{
+  "name": "DixiCode · Demos",
+  "short_name": "DixiCode",
+  "description": "Demos de sistemas para pequeños negocios en Costa Rica.",
+  "lang": "es-CR",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f8fafc",
+  "theme_color": "#4f46e5",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Demo salón", "url": "/salon", "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Demo soda", "url": "/soda", "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Demo boutique", "url": "/boutique", "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }] }
+  ]
+}
