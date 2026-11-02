@@ -138,14 +138,9 @@ export default function PedidoPage() {
 
           <ChargeSheet
             open={chargeOpen}
-            title={`Cobrar mesa ${table.id}`}
+            title={`Registrar pago · Mesa ${table.id}`}
             description={`${linesCount(table.lines)} productos`}
             total={linesTotal(table.lines)}
-            sinpeNote={
-              <>
-                SINPE Móvil al <span className="font-medium text-slate-700">8712-0456</span> a nombre de Soda La Esquina.
-              </>
-            }
             onClose={() => setChargeOpen(false)}
             onConfirm={charge}
           />

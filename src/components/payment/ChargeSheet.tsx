@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react'
+import { useState } from 'react'
 import type { PaymentMethod } from '../../data/payments'
 import { cn } from '../../lib/cn'
 import { formatColones } from '../../lib/format'
@@ -12,19 +12,17 @@ interface ChargeSheetProps {
   title: string
   description?: string
   total: number
-  /** Texto con la cuenta de SINPE Móvil del negocio. */
-  sinpeNote?: ReactNode
   onClose: () => void
   onConfirm: (method: PaymentMethod) => void
 }
 
-/** Cobro con método de pago y cálculo de vuelto en efectivo. */
+/** Registro del pago con su método y cálculo de vuelto en efectivo. */
 export function ChargeSheet({ open, ...props }: ChargeSheetProps) {
   if (!open) return null
   return <ChargeForm {...props} />
 }
 
-function ChargeForm({ title, description, total, sinpeNote, onClose, onConfirm }: Omit<ChargeSheetProps, 'open'>) {
+function ChargeForm({ title, description, total, onClose, onConfirm }: Omit<ChargeSheetProps, 'open'>) {
   const [method, setMethod] = useState<PaymentMethod>('efectivo')
   const [cash, setCash] = useState('')
 
@@ -41,7 +39,7 @@ function ChargeForm({ title, description, total, sinpeNote, onClose, onConfirm }
       description={description}
       footer={
         <Button variant="accent" size="lg" className="w-full" disabled={missing} onClick={() => onConfirm(method)}>
-          Confirmar cobro de {formatColones(total)}
+          Registrar pago de {formatColones(total)}
         </Button>
       }
     >
@@ -96,7 +94,6 @@ function ChargeForm({ title, description, total, sinpeNote, onClose, onConfirm }
           </div>
         </div>
       )}
-      {method === 'sinpe' && sinpeNote && <p className="mt-3 text-sm text-slate-500">{sinpeNote}</p>}
     </Sheet>
   )
 }

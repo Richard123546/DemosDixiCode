@@ -168,14 +168,9 @@ export default function VenderPage() {
 
       <ChargeSheet
         open={chargeOpen}
-        title="Cobrar venta"
+        title="Registrar pago"
         description={`${units} artículos`}
         total={total}
-        sinpeNote={
-          <>
-            SINPE Móvil al <span className="font-medium text-slate-700">8309-1177</span> a nombre de Boutique Amara.
-          </>
-        }
         onClose={() => setChargeOpen(false)}
         onConfirm={charge}
       />
@@ -260,7 +255,7 @@ function CartPanel({ total, units, onCharge }: { total: number; units: number; o
         </p>
       </div>
       <Button variant="accent" size="lg" className="mt-4 w-full" onClick={onCharge}>
-        Cobrar {formatColones(total)}
+        Registrar pago de {formatColones(total)}
       </Button>
     </div>
   )

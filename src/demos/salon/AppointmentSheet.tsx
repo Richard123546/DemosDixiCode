@@ -92,7 +92,7 @@ function AppointmentSheetContent({
       <Sheet
         open
         onClose={onClose}
-        title="Cobrar cita"
+        title="Registrar pago"
         description={`${clientName} · ${service.name}`}
         footer={
           <div className="flex gap-2">
@@ -102,7 +102,7 @@ function AppointmentSheetContent({
               </Button>
             )}
             <Button variant="accent" size="lg" className="flex-1" onClick={charge}>
-              Confirmar cobro de {formatColones(service.price)}
+              Registrar pago de {formatColones(service.price)}
             </Button>
           </div>
         }
@@ -117,11 +117,6 @@ function AppointmentSheetContent({
           </div>
           <p className="mt-5 mb-2 text-sm font-medium text-slate-700">¿Cómo paga?</p>
           <PaymentMethodPicker value={method} onChange={setMethod} />
-          {method === 'sinpe' && (
-            <p className="mt-3 text-sm text-slate-500">
-              SINPE al <span className="font-medium text-slate-700">8888-0123</span> a nombre de Valeria Rojas.
-            </p>
-          )}
         </div>
       </Sheet>
     )
@@ -169,7 +164,7 @@ function AppointmentSheetContent({
             {canCharge && (
               <Button variant="accent" size="lg" className="flex-[1.4]" onClick={() => setStep('pay')}>
                 <Wallet className="size-5" />
-                Cobrar
+                Registrar pago
               </Button>
             )}
           </div>

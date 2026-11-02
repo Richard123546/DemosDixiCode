@@ -86,7 +86,7 @@ export function OrderSummary({ table, tickets, onSend, onCharge, className }: Or
         </Button>
         <Button variant="dark" size="lg" onClick={onCharge} disabled={unsent > 0}>
           <Receipt className="size-5" />
-          Cobrar {formatColones(total)}
+          Registrar pago de {formatColones(total)}
         </Button>
         {unsent > 0 && <p className="text-center text-xs text-slate-500">Enviá los platos nuevos antes de cobrar.</p>}
       </div>

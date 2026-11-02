@@ -84,11 +84,11 @@ export default function CajaPage() {
           <>
           <Button variant="secondary" onClick={exportPayments} className="max-md:flex-1">
             <FileSpreadsheet className="size-5" />
-            Exportar a Excel
+            Exportar<span className="max-md:hidden"> a Excel</span>
           </Button>
           <Button variant="accent" onClick={() => setPickerOpen(true)} className="max-md:flex-1">
             <Wallet className="size-5" />
-            Cobrar cita
+            <span className="whitespace-nowrap">Registrar pago</span>
             {unpaidToday.length > 0 && (
               <span className="rounded-full bg-white/25 px-2 py-0.5 text-xs tabular-nums">{unpaidToday.length}</span>
             )}
@@ -138,7 +138,7 @@ export default function CajaPage() {
               description="Cuando cobrés una cita, aparece aquí con el método de pago."
               action={
                 <Button variant="accent" onClick={() => setPickerOpen(true)}>
-                  Cobrar cita
+                  Registrar pago
                 </Button>
               }
             />
